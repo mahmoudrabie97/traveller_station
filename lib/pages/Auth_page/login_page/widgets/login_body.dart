@@ -6,6 +6,7 @@ import 'package:traveller_station/cubit/auth_cubit/auth_cubit.dart';
 import 'package:traveller_station/cubit/auth_cubit/auth_states.dart';
 import 'package:traveller_station/pages/Auth_page/register_page/sign_up_page.dart';
 import 'package:traveller_station/pages/Auth_page/reset_password_page/reset_password.dart';
+import 'package:traveller_station/pages/welcome_screen/welcome_page.dart';
 import 'package:traveller_station/root_page.dart';
 import 'package:traveller_station/utilites/extentionhelper.dart';
 import 'package:traveller_station/utilites/widgets/custombutton.dart';
@@ -173,7 +174,7 @@ class LoginBody extends StatelessWidget {
                     buttonText: 'Login',
                     onPressed: () {
                       if (_formkey.currentState!.validate()) {
-                        context.push(const RootPage());
+                        context.push(const WelcomPage());
                       }
                     },
                     buttonColor: Colors.blue,

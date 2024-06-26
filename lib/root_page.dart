@@ -14,7 +14,7 @@ class RootPage extends StatefulWidget {
 class _RootPageState extends State<RootPage> {
   int currentindex = 0;
   final List<Widget> pages = <Widget>[
-    const HomePage(),
+    HomePage(),
     const OfferPage(),
     const ReserverationPage(),
     const MorePage(),
