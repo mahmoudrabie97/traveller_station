@@ -4,6 +4,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:traveller_station/cubit/auth_cubit/auth_cubit.dart';
 import 'package:traveller_station/cubit/auth_cubit/auth_states.dart';
+import 'package:traveller_station/generated/l10n.dart';
 import 'package:traveller_station/pages/Auth_page/register_page/sign_up_page.dart';
 import 'package:traveller_station/pages/Auth_page/reset_password_page/reset_password.dart';
 import 'package:traveller_station/pages/welcome_screen/welcome_page.dart';
@@ -28,9 +29,7 @@ class LoginBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<AuthCubit, AuthStates>(
-      listener: (context, state) {
-        // TODO: implement listener
-      },
+      listener: (context, state) {},
       builder: (context, state) {
         return SafeArea(
           child: Padding(
@@ -40,15 +39,15 @@ class LoginBody extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const CustomText(
-                    text: 'Let\'s Login',
+                  CustomText(
+                    text: S.of(context).logintitle,
                     fontSize: 25,
                     fontWeight: FontWeight.bold,
                   ),
                   const SizedBox(
                     height: 15,
                   ),
-                  const CustomText(text: 'Phone Number'),
+                  CustomText(text: S.of(context).phonenum),
                   const SizedBox(
                     height: 20,
                   ),
@@ -61,11 +60,11 @@ class LoginBody extends StatelessWidget {
                           child: Row(
                             children: [
                               Container(
-                                height: 70,
+                                height: 75,
                                 width: 120,
-                                child: const IntlPhoneField(
+                                child: IntlPhoneField(
                                   decoration: InputDecoration(
-                                    labelText: 'Phone Number',
+                                    labelText: S.of(context).phonenum,
                                     border: OutlineInputBorder(
                                       borderSide: BorderSide(),
                                     ),
@@ -79,7 +78,7 @@ class LoginBody extends StatelessWidget {
                       ),
                       Expanded(
                         child: SizedBox(
-                          height: 50,
+                          height: 70,
                           child: CustomTextFormField(
                             controller: _phonenumber,
                             keyboardType: TextInputType.phone,
@@ -89,7 +88,7 @@ class LoginBody extends StatelessWidget {
                               }
                               return null;
                             },
-                            hintText: ' phone number',
+                            hintText: S.of(context).phonenum,
                             hinnntcolr: Colors.grey,
                             focusnode: field1,
                             onsubmitted: (value) {
@@ -103,12 +102,7 @@ class LoginBody extends StatelessWidget {
                   const SizedBox(
                     height: 15,
                   ),
-                  const CustomText(
-                    text: 'Password',
-                  ),
-                  const SizedBox(
-                    height: 15,
-                  ),
+                  CustomText(text: S.of(context).password),
                   const SizedBox(
                     height: 15,
                   ),
@@ -126,7 +120,7 @@ class LoginBody extends StatelessWidget {
                       return null;
                     },
                     focusnode: field2,
-                    hintText: ' Password',
+                    hintText: S.of(context).password,
                     hinnntcolr: Colors.grey,
                   ),
                   const SizedBox(
@@ -139,8 +133,8 @@ class LoginBody extends StatelessWidget {
                         onTap: () {
                           context.push(const ResetPassword());
                         },
-                        child: const CustomText(
-                          text: 'Fogot Password?',
+                        child: CustomText(
+                          text: S.of(context).forgotPass,
                           color: Colors.blue,
                         ),
                       ),
@@ -151,16 +145,16 @@ class LoginBody extends StatelessWidget {
                   ),
                   Row(
                     children: [
-                      const CustomText(
-                        text: 'Dont\'have an account?  ',
+                      CustomText(
+                        text: S.of(context).Donthavescount,
                         color: Colors.blue,
                       ),
                       InkWell(
                         onTap: () {
                           context.push(const SignUPPage());
                         },
-                        child: const CustomText(
-                          text: 'Sign Up ',
+                        child: CustomText(
+                          text: S.of(context).Signup,
                           color: Colors.blue,
                           fontSize: 20,
                         ),
@@ -171,7 +165,7 @@ class LoginBody extends StatelessWidget {
                     height: 20,
                   ),
                   CustomButton(
-                    buttonText: 'Login',
+                    buttonText: S.of(context).login,
                     onPressed: () {
                       if (_formkey.currentState!.validate()) {
                         context.push(const WelcomPage());

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:traveller_station/pages/Notification_page/notificaton_page.dart';
+import 'package:traveller_station/utilites/extentionhelper.dart';
 import 'package:traveller_station/utilites/widgets/customtext.dart';
 
 class StackItemWidget extends StatelessWidget {
@@ -14,7 +16,6 @@ class StackItemWidget extends StatelessWidget {
           width: double.infinity,
           child: Image.asset(
             'assets/images/Mask Group 3.png',
-            fit: BoxFit.cover,
           ),
         ),
         const Positioned(
@@ -39,15 +40,19 @@ class StackItemWidget extends StatelessWidget {
                 )
               ],
             )),
-        const Positioned(
-          top: 63,
-          left: 16,
-          child: Icon(
-            Icons.notifications,
-            size: 30,
-            color: Colors.white,
-          ),
-        ),
+        Positioned(
+            top: 63,
+            left: 16,
+            child: IconButton(
+              onPressed: () {
+                context.push(NotificationPage());
+              },
+              icon: Icon(
+                Icons.notifications,
+                size: 30,
+                color: Colors.white,
+              ),
+            )),
         Positioned(
             bottom: 20,
             left: 16,

@@ -7,12 +7,11 @@ class CustomText extends StatelessWidget {
   final FontWeight fontWeight;
 
   const CustomText(
-      {Key? key,
+      {super.key,
       required this.text,
       this.color = Colors.black,
       this.fontSize = 16.0,
-      this.fontWeight = FontWeight.normal})
-      : super(key: key);
+      this.fontWeight = FontWeight.normal});
 
   @override
   Widget build(BuildContext context) {

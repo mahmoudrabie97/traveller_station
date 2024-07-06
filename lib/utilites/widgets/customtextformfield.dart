@@ -10,6 +10,7 @@ class CustomTextFormField extends StatelessWidget {
   final IconData? perfixicon;
   final IconData? suffixicon;
   final Function()? suffixpressed;
+  final Function()? perfixpressed;
   final FocusNode? focusnode;
   final Function(String?)? onsubmitted;
 
@@ -25,7 +26,8 @@ class CustomTextFormField extends StatelessWidget {
       this.hinnntcolr = Colors.black,
       this.perfixicon,
       this.onsubmitted,
-      this.suffixicon});
+      this.suffixicon,
+      this.perfixpressed});
 
   @override
   Widget build(BuildContext context) {
@@ -50,11 +52,15 @@ class CustomTextFormField extends StatelessWidget {
             borderRadius: BorderRadius.circular(10.0),
             borderSide: const BorderSide(color: Colors.white),
           ),
+          errorStyle: const TextStyle(
+              color: Colors.red, fontSize: 12, fontWeight: FontWeight.bold),
           focusColor: Colors.white,
-          prefixIcon: perfixicon != null ? Icon(perfixicon) : null,
-          suffixIcon: IconButton(
-              onPressed: suffixpressed,
-              icon: suffixicon != null ? Icon(suffixicon) : Icon(suffixicon))),
+          prefixIcon: perfixicon != null
+              ? IconButton(onPressed: perfixpressed, icon: Icon(perfixicon))
+              : null,
+          suffixIcon: suffixicon != null
+              ? IconButton(onPressed: suffixpressed, icon: Icon(suffixicon))
+              : null),
       onFieldSubmitted: onsubmitted,
       validator: validator!,
       controller: controller,

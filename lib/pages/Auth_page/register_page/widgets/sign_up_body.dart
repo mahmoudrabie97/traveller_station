@@ -102,7 +102,7 @@ class SignUpBody extends StatelessWidget {
                             child: Row(
                               children: [
                                 Container(
-                                  height: 70,
+                                  height: 75,
                                   width: 120,
                                   child: const IntlPhoneField(
                                     decoration: InputDecoration(
@@ -120,7 +120,7 @@ class SignUpBody extends StatelessWidget {
                         ),
                         Expanded(
                           child: SizedBox(
-                            height: 50,
+                            height: 70,
                             child: CustomTextFormField(
                               controller: _phonenumberController,
                               keyboardType: TextInputType.phone,

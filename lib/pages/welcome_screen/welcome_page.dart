@@ -28,7 +28,9 @@ class _WelcomPageState extends State<WelcomPage> {
           alignment: Alignment.bottomCenter,
           child: FloatingActionButton(
             backgroundColor: Colors.blue,
-            onPressed: () {},
+            onPressed: () {
+              context.push(RootPage());
+            },
             child: Icon(
               Icons.add,
               color: Colors.white,

@@ -27,3 +27,5 @@ class RegisterSucsessState extends AuthStates {}
 class RegisterErrorState extends AuthStates {}
 
 class RegisterErrorDataState extends AuthStates {}
+
+class ChangeLangugeState extends AuthStates {}

@@ -16,7 +16,7 @@ class _RootPageState extends State<RootPage> {
   final List<Widget> pages = <Widget>[
     HomePage(),
     const OfferPage(),
-    const ReserverationPage(),
+    TripsPage(),
     const MorePage(),
   ];
   @override
@@ -46,7 +46,7 @@ class _RootPageState extends State<RootPage> {
             icon: Icon(Icons.percent_rounded), label: 'Offers '),
         BottomNavigationBarItem(
           icon: Icon(Icons.bookmark_border_outlined),
-          label: 'Favourites',
+          label: 'Trips',
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.more_horiz),

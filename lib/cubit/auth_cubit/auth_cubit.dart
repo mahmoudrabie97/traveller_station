@@ -16,6 +16,7 @@ class AuthCubit extends Cubit<AuthStates> {
   bool isSecurepc = true;
   bool isSecurecreatepass = true;
   bool isSecureconfirmcreatepass = true;
+  String? language = 'english';
 
   bool showAnimation = false;
 
@@ -61,5 +62,10 @@ class AuthCubit extends Cubit<AuthStates> {
       isSecureconfirmcreatepass = true;
     }
     emit((ChangesecurepassworConfirmState()));
+  }
+
+  void changeLanguaget(String? languagee) {
+    language = languagee ?? '';
+    emit(ChangeLangugeState());
   }
 }
